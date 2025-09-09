@@ -1,0 +1,16 @@
+public class ContaPoupanca extends Conta {
+    public ContaPoupanca(String clienteTitular, String numeroConta, double saldo) {
+        super(clienteTitular, numeroConta, saldo);
+    }
+
+    // aplicar juros
+    @Override
+    public double aplicarJuros() {
+        setSaldo(getSaldo() * 1.01);
+        return getSaldo();
+    }
+    // exibir informção da conta poupança
+    public void exibirDados() {
+        System.out.println("Conta Poupança: \n" + getClienteTitular() + "\nNumero conta: " + getNumeroConta()+ "\nSaldo: " + getSaldo());
+    }
+}
