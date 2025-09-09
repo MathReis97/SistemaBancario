@@ -1,0 +1,4 @@
+public interface OpercaoBancarias {
+    void depositar (double valor);
+    void sacar (double sacar);
+}
