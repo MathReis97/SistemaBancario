@@ -1,0 +1,63 @@
+abstract class Conta implements OpercaoBancarias {
+    private String clienteTitular;
+    private String numeroConta;
+    private double saldo;
+
+    // Construtor
+    public Conta(String clienteTitular, String numeroConta, double saldo) {
+        this.clienteTitular = clienteTitular;
+        this.numeroConta = numeroConta;
+        this.saldo = saldo;
+    }
+
+    //Metodo depositar
+    public void depositar(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+            System.out.println("\nDeposito de R$ " + valor + "Feito com sucesso");
+        } else {
+            System.out.println("\nValor inválido!!!");
+        }
+    }
+
+    //metodo sacar
+    public void sacar(double valor) {
+        if (valor > 0) {
+            saldo -= valor;
+            System.out.println("\nSaque de R$ " + valor + "Feito com sucesso");
+        } else {
+            System.out.println("\nValor inválido!!!");
+        }
+    }
+
+    //metodo exibir dados
+    public void exibirDados() {
+        System.out.println("Dados da conta:" + this.clienteTitular + this.numeroConta + this.saldo);
+    }
+
+    public abstract double aplicarJuros();
+
+
+    //Getters
+    public double getSaldo() {
+        return saldo;
+    }
+    public String getClienteTitular() {
+        return clienteTitular;
+    }
+    public String getNumeroConta() {
+        return numeroConta;
+    }
+
+    //Setters
+    public void setNumeroConta(String numeroConta) {
+        this.numeroConta = numeroConta;
+    }
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+    public void setClienteTitular(String clienteTitular) {
+        this.clienteTitular = clienteTitular;
+    }
+
+}
