@@ -1,0 +1,66 @@
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        Conta contaCorrente1 = new ContaCorrente("Matheus", "1234", 500);
+        Conta contaPoupanca1 = new ContaPoupanca("Reis", "4321", 400);
+        int opcao = 0;
+
+
+    while (opcao !=6) {
+        System.out.println("======= Bem vindo ao BANCO =======");
+        System.out.println("Qual Conta deseja ultilizar? ");
+        System.out.println("1 - depositar Conta Corrente");
+        System.out.println("2 - depositar Conta Poupança");
+        System.out.println("3 - para sacar Conta Corrente");
+        System.out.println("4 - para sacar Conta Poupança");
+        System.out.println("5 - para exibir informação");
+        System.out.println("0 - para sair");
+        opcao = sc.nextInt();
+
+
+        switch (opcao) {
+            case 1:
+                System.out.println("Digite o valor do depósito");
+                double deposito = sc.nextDouble();
+                contaCorrente1.depositar(deposito);
+                break;
+
+            case 2:
+                System.out.println("Digite o valor do depósito");
+                double deposito1 = sc.nextDouble();
+                contaPoupanca1.depositar(deposito1);
+                break;
+
+            case 3:
+                System.out.println("Digite valor do saque");
+                double saque = sc.nextDouble();
+                contaCorrente1.sacar(saque);
+                break;
+
+            case 4:
+                System.out.println("Digite valor do saque");
+                double saque1 = sc.nextDouble();
+                contaPoupanca1.sacar(saque1);
+                break;
+
+            case 5:
+                contaCorrente1.exibirDados();
+                System.out.println("==========");
+                contaPoupanca1.exibirDados();
+                break;
+
+            case 0:
+                break;
+
+            default:
+                System.out.println("Opção Inválida!!!");
+        }
+        }
+
+
+    }
+}
