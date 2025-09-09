@@ -1,0 +1,19 @@
+package br.com;
+
+public class ContaCorrente extends Conta {
+    public ContaCorrente(String clienteTitular, String numeroConta, double saldo) {
+        super(clienteTitular, numeroConta, saldo);
+    }
+
+    // juros não aplicado na conta corrente
+    @Override
+    public double aplicarJuros() {
+        System.out.println("Conta Corrente nao tem rendimentos");
+        return 0;
+    }
+
+    // exibir informação conta corrente
+    public void exibirDados() {
+        System.out.println("Conta Corrente: \n" + getClienteTitular() + "\nNumero conta: " + getNumeroConta()+ "\nSaldo: " + getSaldo());
+    }
+}
